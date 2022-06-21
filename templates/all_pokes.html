@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+<table class="styled-table">
+  <tr> <!-- what the text displays above the table -->
+  <th>Pokemon</th>
+  <th>img</th>
+  <th>types</th>
+    </tr>
+{% for poke in pokemon%} <!-- this is how it's getting it's information from the database to link here-->
+  <tr class="active-row">
+<td>{{poke.name}}</td>
+<td><img src={{poke.picture}}></td> <!-- fun fact: these aren't gifs for some reason, it's multiple pngs-->
+<td>
+{% for type in poke.types%}
+<img src={{type}}>
+{% endfor%}
+</td>
+    </tr>
+
+</br>
+{% endfor%}
+</table>
+{% endblock %}
+
+<!--
+{% block scripts %}
+  <script>
+    $pokeBase.ready(function () {
+      $('#data').DataTable();
+    });
+  </script>
+{% endblock %}
+-->

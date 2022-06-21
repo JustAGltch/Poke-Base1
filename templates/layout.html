@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+ <head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+   <title>Example Site - {{page_title}}</title>
+ </head>
+ <body>
+   {% include 'header.html' %}
+   {% include 'nav.html' %}
+   {% block content %}{% endblock %}
+   {% include 'footer.html' %}
+   <div class="container">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
+
